@@ -62,7 +62,7 @@ void copy_line(const char *const source_data, uint16_t size)
         {
             if (line*16 + char_column < size)
             {
-                lcd_lines[line][char_column] = source_data[char_column];
+                lcd_lines[line][char_column] = source_data[line*16 + char_column];
             }
             else
             {
@@ -74,7 +74,7 @@ void copy_line(const char *const source_data, uint16_t size)
 
 void getPacket(uint16_t port, uint8_t ip[4], uint16_t src_port, const char *data, uint16_t len)
 {
-    Serial.print("Packet received from: ");
+    Serial.print("Packet received from ");
 
     Serial.print(ip[0]);
     Serial.print(".");
@@ -83,7 +83,7 @@ void getPacket(uint16_t port, uint8_t ip[4], uint16_t src_port, const char *data
     Serial.print(ip[2]);
     Serial.print(".");
     Serial.print(ip[3]);
-    Serial.print(" with ");
+    Serial.print(": ");
     Serial.println(data);
 
     copy_line(data, len);
