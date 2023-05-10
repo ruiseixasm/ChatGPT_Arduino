@@ -60,10 +60,10 @@ static int char_slack = 0;
 
 void redraw_lcd() {
 
-    lcd.setCursor(0, 0);
-    lcd.print("                ");
-    lcd.setCursor(0, 1);
-    lcd.print("                ");
+    // lcd.setCursor(0, 0);
+    // lcd.print("                ");
+    // lcd.setCursor(0, 1);
+    // lcd.print("                ");
 
     for (int line = 0; line < 2; line++)
     {
